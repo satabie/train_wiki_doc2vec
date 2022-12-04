@@ -7,10 +7,10 @@
 # Usage:
 まずcloneして仮想環境に入る。私の環境はfishであることに注意する。
 ```bash
-$ git clone https://github.com/satabie/train_wiki_doc2vec.git \
-cd train_wiki_doc2vec \
-python -m venv .venv \
-source .venv/bin/activate.fish \
+$ git clone https://github.com/satabie/train_wiki_doc2vec.git &&
+cd train_wiki_doc2vec &&
+python -m venv .venv &&
+source .venv/bin/activate.fish &&
 pip install -r requirements.txt
 ```
 次にmake_corpus.pyでDBから訓練用データを構築して保存する。

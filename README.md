@@ -11,7 +11,7 @@ python -m venv .venv &&
 source .venv/bin/activate.fish &&
 pip install -r requirements.txt
 ```
-次にmake_corpus.pyでDBから訓練用データを構築して保存する。
+次にmake_corpus.pyでDBから取ってきたテキストデータを訓練用データに整形して保存する。
 ```bash
 $ python make_corpus.py
 ```

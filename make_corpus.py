@@ -18,7 +18,7 @@ def main():
     text_list_en = get_FAtext('en')
     data_maker_en = DatasetManager('en')
     dataset_en = list(map(data_maker_en.generate_dataset, text_list_en[0:4]))
-    with open('dataset_en.pkl', 'wb') as f:
+    with open('dataset/dataset_en.pkl', 'wb') as f:
         joblib.dump(dataset_en, f)
     # メモリの解放
     del dataset_en
@@ -29,7 +29,7 @@ def main():
     text_list_ja = get_FAtext('ja')
     data_maker_ja = DatasetManager('ja')
     dataset_ja = list(map(data_maker_ja.generate_dataset, text_list_ja[0:4]))
-    with open('dataset_ja.pkl', 'wb') as f:
+    with open('dataset/dataset_ja.pkl', 'wb') as f:
         joblib.dump(dataset_ja, f)
 
 

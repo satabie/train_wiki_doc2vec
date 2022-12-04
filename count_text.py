@@ -21,6 +21,7 @@ def main():
         # 日本語の記事の数を数える
         query = f"SELECT page_id FROM {table_name} WHERE ja_text != '';"  # 注意
         row_count_ja += len(db_manager.select(query))
+
         # 英語の記事の数（DBの行の総数）を調べる
         query = f"SELECT page_id FROM {table_name} WHERE en_text != '';"
         row_count_en += len(db_manager.select(query))

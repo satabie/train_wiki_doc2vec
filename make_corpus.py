@@ -2,6 +2,7 @@ from modules.DatasetManager import DatasetManager
 from modules.dbManager import DBManager
 import gc
 import joblib
+import os
 
 DB_HOST = "localhost"
 DB_PORT = "5432"
@@ -14,10 +15,12 @@ def main():
     """
     DBからテキストの読み込みを行う
     """
+    os.mkdir("dataset")
     # english
     text_list_en = get_FAtext('en')
     data_maker_en = DatasetManager('en')
-    dataset_en = list(map(data_maker_en.generate_dataset, text_list_en[0:4]))
+    dataset_en = list(map(data_maker_en.generate_dataset, text_list_en))
+    print(f"英語記事の総数：{len(dataset_en)}")
     with open('dataset/dataset_en.pkl', 'wb') as f:
         joblib.dump(dataset_en, f)
     # メモリの解放
@@ -28,7 +31,8 @@ def main():
     # japanese
     text_list_ja = get_FAtext('ja')
     data_maker_ja = DatasetManager('ja')
-    dataset_ja = list(map(data_maker_ja.generate_dataset, text_list_ja[0:4]))
+    dataset_ja = list(map(data_maker_ja.generate_dataset, text_list_ja))
+    print(f"日本語記事の総数：{len(dataset_ja)}")
     with open('dataset/dataset_ja.pkl', 'wb') as f:
         joblib.dump(dataset_ja, f)
 
@@ -41,11 +45,13 @@ def get_FAtext(lang):
         table_name = table_taple[0]
 
         if lang == 'en':
-            query = f"SELECT en_text FROM {table_name} WHERE en_text != 'null'"  # 変更点
+            query = f"SELECT en_text FROM {table_name} WHERE en_text != ''"  # 変更点
             text_taple = db_manager.select(query)
         elif lang == 'ja':
-            query = f"SELECT ja_text FROM {table_name} WHERE ja_text != 'null'"  # 変更点
+            query = f"SELECT ja_text FROM {table_name} WHERE ja_text != ''"  # 変更点
             text_taple = db_manager.select(query)
+        else:
+            raise Exception('language option error')
 
         for text in text_taple:
             text = text[0]

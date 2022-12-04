@@ -5,7 +5,7 @@
 
 
 # Usage:
-まずcloneして仮想環境に入る。私の環境はfishであることに注意する。
+まずcloneして仮想環境に入る。私の環境はfishであることに注意する。bashおよびzshならばactivate.fishの部分をactivateに変更すればよい。
 ```bash
 $ git clone https://github.com/satabie/train_wiki_doc2vec.git &&
 cd train_wiki_doc2vec &&

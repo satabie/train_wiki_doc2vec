@@ -1,8 +1,6 @@
 # train wikipedia doc2vec
 [wikipedia_Data_to_DB](https://github.com/satabie/wikipedia-Data_to_DB)で構築したデータベースを用いて、Doc2Vecの訓練を行う。
 
-大まかな流れ
-
 
 # Usage:
 まずcloneして仮想環境に入る。私の環境はfishであることに注意する。bashおよびzshならばactivate.fishの部分をactivateに変更すればよい。

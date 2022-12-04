@@ -14,7 +14,7 @@ from nltk.tokenize import word_tokenize
 import nltk
 
 
-class manage_dataset:
+class DatasetManager:
     """
     言語を指定して初期化: ja, en
     """

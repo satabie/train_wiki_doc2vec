@@ -3,7 +3,7 @@
 
 
 # Usage:
-まずcloneして仮想環境に入る。私の環境はfishであることに注意する。bashおよびzshならばactivate.fishの部分をactivateに変更すればよい
+まずcloneして仮想環境に入る。
 
 ### fish
 ```bash

@@ -3,7 +3,9 @@
 
 
 # Usage:
-まずcloneして仮想環境に入る。私の環境はfishであることに注意する。bashおよびzshならばactivate.fishの部分をactivateに変更すればよい。
+まずcloneして仮想環境に入る。私の環境はfishであることに注意する。bashおよびzshならばactivate.fishの部分をactivateに変更すればよい
+
+### fish
 ```bash
 $ git clone https://github.com/satabie/train_wiki_doc2vec.git &&
 cd train_wiki_doc2vec &&
@@ -11,6 +13,15 @@ python -m venv .venv &&
 source .venv/bin/activate.fish &&
 pip install -r requirements.txt
 ```
+### bash, zsh
+```bash
+$ git clone https://github.com/satabie/train_wiki_doc2vec.git &&
+cd train_wiki_doc2vec &&
+python -m venv .venv &&
+source .venv/bin/activate &&
+pip install -r requirements.txt
+```
+
 次にmake_corpus.pyでDBから取ってきたテキストデータを訓練用データに整形して保存する。
 ```bash
 $ python make_corpus.py

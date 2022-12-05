@@ -45,10 +45,12 @@ def get_FAtext(lang):
         table_name = table_taple[0]
 
         if lang == 'en':
-            query = f"SELECT en_text FROM {table_name} WHERE en_text != ''"  # 変更点
+            # 変更点
+            query = f"SELECT en_text FROM {table_name} WHERE en_text != ''"
             text_taple = db_manager.select(query)
         elif lang == 'ja':
-            query = f"SELECT ja_text FROM {table_name} WHERE ja_text != ''"  # 変更点
+            # 変更点
+            query = f"SELECT ja_text FROM {table_name} WHERE ja_text != ''"
             text_taple = db_manager.select(query)
         else:
             raise Exception('language option error')

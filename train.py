@@ -12,17 +12,17 @@ def main(lang):
         dataset = joblib.load(f)  # データセットの読み込み
         trainings = [TaggedDocument(doc, [i]) for i, doc in enumerate(dataset)]
         model = Doc2Vec(documents=trainings, vector_size=100,
-                        dm=True, epochs=30, window=15, min_count=1, workers=12)
+                        dm=True, epochs=30, window=15, min_count=1, workers=15)
         model.build_vocab(trainings)
-        model.save('models/test_en.model')
+        model.save('models/en_wikiFA_dv.model')
     elif lang == 'ja':
         f = open("dataset/dataset_ja.pkl", "rb")
         dataset = joblib.load(f)  # データセットの読み込み
         trainings = [TaggedDocument(doc, [i]) for i, doc in enumerate(dataset)]
         model = Doc2Vec(documents=trainings, vector_size=100,
-                        dm=True, epochs=30, window=15, min_count=1, workers=12)
+                        dm=True, epochs=30, window=15, min_count=1, workers=15)
         model.build_vocab(trainings)
-        model.save('models/test_ja.model')
+        model.save('models/ja_wikiFA_dv.model')
     else:
         raise Exception("Usage: python train.py [language]")
 
